@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <style>
+    input {
+      left: 100px;
+      position: absolute;
+    }
+  </style>
+  <title>JS Bin</title>
+</head>
+<body>
+  <span>Put the Google Classroom URL into the respective boxes</span><br>
+  <span>Leave spaces blank if there is no class.</span><br>
+
+<br>
+1st :  <input type="url" id="1" autocomplete="off"><br><br>
+2nd :  <input type="url" id="2" autocomplete="off"><br><br>
+3rd :  <input type="url" id="3" autocomplete="off"><br><br>
+Advisory :  <input type="url" id="4" autocomplete="off"><br><br>
+5th :  <input type="url" id="5" autocomplete="off"><br><br>
+6th :  <input type="url" id="6" autocomplete="off"><br><br>
+7th :  <input type="url" id="7" autocomplete="off"><br><br>
+8th :  <input type="url" id="8" autocomplete="off"><br><br>
+
+  <span>Drag this into the bookmark bar : </span><br>
+<a id="link">Current class</a>
+  <script>
+var func;
+function change() {
+func = function(){
+var time = new Date(),
+    h = time.getHours(),
+    m = time.getMinutes();
+
+  function between(dat1, dat2){
+
+startDate = new Date(time.getTime());
+startDate.setHours(dat1[0]);
+startDate.setMinutes(dat1[1]);
+
+endDate = new Date(time.getTime());
+endDate.setHours(dat2[0]);
+endDate.setMinutes(dat2[1]);
+
+
+return startDate < time && endDate > time
+}
+
+if (time.getDay() == 4) { //thurdays
+if (between([8, 28], [9, 12]) && AAAAAAAAAA !== "") {//1
+window.open(AAAAAAAAAA, "_parent")
+}
+else if (between([9, 19], [10, 2]) && BBBBBBBBBB !== "") {//2
+window.open(BBBBBBBBBB, "_parent")
+}
+else if (between([10, 9], [10, 52]) && CCCCCCCCCC !== "") {//3
+window.open(CCCCCCCCCC, "_parent")
+}
+else if (between([10, 59], [11, 42]) && EEEEEEEEEE !== "") {//5
+window.open(EEEEEEEEEE, "_parent")
+}
+else if (between([11, 49], [13, 10]) && FFFFFFFFFF !== "") {//6
+window.open(FFFFFFFFFF, "_parent")
+}
+else if (between([13, 17], [14, 0]) && GGGGGGGGGG !== "") {//7
+window.open(GGGGGGGGGG, "_parent")
+}
+else if (between([14, 7], [14, 51]) && HHHHHHHHHH !== "") {//8
+window.open(HHHHHHHHHH, "_parent")
+}
+
+ 
+} else {//normal
+if (between([7, 28], [8, 16]) && AAAAAAAAAA !== "") {//1
+window.open(AAAAAAAAAA, "_parent")
+}
+else if (between([8, 23], [9, 11]) && BBBBBBBBBB !== "") {//2
+window.open(BBBBBBBBBB, "_parent")
+}
+else if (between([9, 18], [10, 6]) && CCCCCCCCCC !== "") {//3
+window.open(CCCCCCCCCC, "_parent")
+}
+else if (between([10, 13], [10, 38]) && DDDDDDDDDD !== "") {//advis
+window.open(DDDDDDDDDD, "_parent")
+}
+else if (between([10, 45], [11, 33]) && EEEEEEEEEE !== "") {//5
+window.open(EEEEEEEEEE, "_parent")
+}
+else if (between([11, 40], [13, 1]) && FFFFFFFFFF !== "") {//6
+window.open(FFFFFFFFFF, "_parent")
+}
+else if (between([13, 8], [14, 56]) && GGGGGGGGGG !== "") {//7
+window.open(GGGGGGGGGG, "_parent")
+}
+else if (between([14, 3], [14, 51]) && HHHHHHHHHH !== "") {//8
+window.open(HHHHHHHHHH, "_parent")
+}
+}
+}
+
+
+func = func.toString();
+var lett = ["AAAAAAAAAA", "BBBBBBBBBB", "CCCCCCCCCC", "DDDDDDDDDD", "EEEEEEEEEE", "FFFFFFFFFF", "GGGGGGGGGG", "HHHHHHHHHH"];
+for (var i = 0; i < document.querySelectorAll("input").length; i++) {
+func = func.replace(new RegExp(lett[i], "g"), '"'+ document.querySelectorAll("input")[i].value + '"')
+document.querySelectorAll("input")[i].oninput = change;
+}
+link.href = encodeURI("javascript:("+func+")()");
+
+    }
+change();
+  </script>
+</body>
+</html>
